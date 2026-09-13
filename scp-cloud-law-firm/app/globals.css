@@ -1,0 +1,150 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   SCP CLOUD LAW FIRM — Design tokens
+   Palette is fixed by brief: navy, discreet gold, slate neutrals,
+   emerald (complete) / rose (incomplete).
+   Type: a restrained serif for identity + numbers-of-record, a neutral
+   sans for interface text, and a monospace for reference codes
+   (dossier refs, client codes, timestamps) — codes are literally codes,
+   so mono is functional here, not decorative.
+   No externally-fetched fonts: everything resolves to installed system
+   faces so the app builds and renders without network access.
+   ========================================================================== */
+
+:root {
+  --color-navy-950: #0b1220;
+  --color-navy-900: #0f172a;
+  --color-navy-800: #1e293b;
+  --color-navy-700: #2b3a52;
+
+  --color-gold-600: #b45309;
+  --color-gold-500: #d4af37;
+  --color-gold-300: #e8cf85;
+  --color-gold-100: #f6ecc9;
+
+  /* Brand tokens (luxury legal palette) — the CTA/identity layer that sits
+     on top of the structural navy/gold/slate scale above. Kept as distinct
+     names because they map to fixed hex values from the brand guidelines,
+     independent of how the structural scale might evolve. */
+  --color-brand-gold: #c5a059;
+  --color-brand-dark: #0f172a;
+  --color-brand-gray: #555555;
+
+  --color-slate-50: #fafafa;
+  --color-slate-100: #f1f5f9;
+  --color-slate-200: #e2e8f0;
+  --color-slate-400: #94a3b8;
+  --color-slate-500: #6b7280;
+  --color-slate-700: #334155;
+
+  --color-emerald-600: #059669;
+  --color-emerald-500: #10b981;
+  --color-emerald-50: #ecfdf5;
+
+  --color-rose-600: #dc2626;
+  --color-rose-500: #ef4444;
+  --color-rose-50: #fef2f2;
+
+  --font-display: "Iowan Old Style", "Sitka Text", Georgia, "Times New Roman", serif;
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, "Liberation Mono", monospace;
+
+  --shadow-luxury: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+}
+
+@theme inline {
+  --color-navy-950: var(--color-navy-950);
+  --color-navy-900: var(--color-navy-900);
+  --color-navy-800: var(--color-navy-800);
+  --color-navy-700: var(--color-navy-700);
+
+  --color-gold-600: var(--color-gold-600);
+  --color-gold-500: var(--color-gold-500);
+  --color-gold-300: var(--color-gold-300);
+  --color-gold-100: var(--color-gold-100);
+
+  --color-brand-gold: var(--color-brand-gold);
+  --color-brand-dark: var(--color-brand-dark);
+  --color-brand-gray: var(--color-brand-gray);
+
+  --color-slate-50: var(--color-slate-50);
+  --color-slate-100: var(--color-slate-100);
+  --color-slate-200: var(--color-slate-200);
+  --color-slate-400: var(--color-slate-400);
+  --color-slate-500: var(--color-slate-500);
+  --color-slate-700: var(--color-slate-700);
+
+  --color-emerald-600: var(--color-emerald-600);
+  --color-emerald-500: var(--color-emerald-500);
+  --color-emerald-50: var(--color-emerald-50);
+
+  --color-rose-600: var(--color-rose-600);
+  --color-rose-500: var(--color-rose-500);
+  --color-rose-50: var(--color-rose-50);
+
+  --font-display: var(--font-display);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+
+  --shadow-luxury: var(--shadow-luxury);
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background: var(--color-slate-50);
+  color: var(--color-brand-dark);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, .font-display {
+  letter-spacing: 0.01em;
+}
+
+/* Letterhead rule — a thin gold hairline used to frame case references,
+   evoking a stamped/embossed document header. Used sparingly. */
+.letterhead-rule {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-brand-gold) 15%, var(--color-brand-gold) 85%, transparent);
+}
+
+.case-code {
+  font-family: var(--font-mono);
+  letter-spacing: 0.06em;
+}
+
+::selection {
+  background: var(--color-gold-300);
+  color: var(--color-navy-950);
+}
+
+/* Visible keyboard focus everywhere, incl. inside custom components */
+:focus-visible {
+  outline: 2px solid var(--color-brand-gold);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* Minimal scrollbar styling for the kanban / chat panes */
+.thin-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.thin-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--color-slate-200);
+  border-radius: 999px;
+}
+.thin-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
