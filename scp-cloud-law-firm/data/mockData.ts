@@ -28,8 +28,8 @@ const iso = (deltaDays: number, hour = 9, minute = 0) => {
 export const USERS: User[] = [
   { id: "assoc-1", name: "Me EK", email: "c.ferrand@scpcloud.law", role: "ASSOCIATE", initials: "CF", color: "#0E7490" },
   { id: "assoc-2", name: "Me ME", email: "j.moreau@scpcloud.law", role: "ASSOCIATE", initials: "JM", color: "#4F46E5" },
-  { id: "assoc-3", name: "Me Sophie Lambert", email: "s.lambert@scpcloud.law", role: "ASSOCIATE", initials: "SL", color: "#A21CAF" },
-  { id: "assoc-4", name: "Me Antoine Reyer", email: "a.reyer@scpcloud.law", role: "ASSOCIATE", initials: "AR", color: "#B45309" },
+  { id: "assoc-3", name: "Me S", email: "s.lambert@scpcloud.law", role: "ASSOCIATE", initials: "SL", color: "#A21CAF" },
+  { id: "assoc-4", name: "Me An", email: "a.reyer@scpcloud.law", role: "ASSOCIATE", initials: "AR", color: "#B45309" },
   { id: "intern-1", name: "Nora Haddad", email: "n.haddad@scpcloud.law", role: "INTERN", initials: "NH", color: "#0F766E" },
   { id: "intern-2", name: "Louis Petit", email: "l.petit@scpcloud.law", role: "INTERN", initials: "LP", color: "#334155" },
   { id: "intern-3", name: "Maya Girard", email: "m.girard@scpcloud.law", role: "INTERN", initials: "MG", color: "#7C3AED" },
