@@ -17,7 +17,7 @@ import type {
 const NOW = new Date("2026-08-09T09:00:00.000Z");
 const iso = (deltaDays: number, hour = 9, minute = 0) => {
   const d = new Date(NOW);
-  d.setUTCDate(d.getUTCDate() + deltaDays);²
+  d.setUTCDate(d.getUTCDate() + deltaDays);
   d.setUTCHours(hour, minute, 0, 0);
   return d.toISOString();
 };
