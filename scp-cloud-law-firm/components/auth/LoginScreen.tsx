@@ -25,7 +25,7 @@ export function LoginScreen() {
   const [error, setError] = React.useState<string | null>(null);
 
   const associates = users.filter((u) => u.role === "ASSOCIATE");
-  const interns = users.filter((u) => u.role === "INTERN");
+  const interns = users.filter((u) => u.role === "TEAM MEMBERS");
 
   function handleStaffLogin(userId: string) {
     const user = users.find((u) => u.id === userId);
