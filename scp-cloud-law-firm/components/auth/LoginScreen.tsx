@@ -11,7 +11,7 @@ import { Avatar } from "@/components/ui/avatar";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Logo } from "@/components/shared/Logo";
 
-type RoleTab = "ASSOCIATE" | "INTERN" | "CLIENT";
+type RoleTab = "ASSOCIATE" | "TEAM MEMBERS" | "CLIENT";
 
 export function LoginScreen() {
   const router = useRouter();
