@@ -11,7 +11,7 @@ import { Avatar } from "@/components/ui/avatar";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Logo } from "@/components/shared/Logo";
 
-type RoleTab = "ASSOCIATE" | "TEAM MEMBERS" | "CLIENT";
+type RoleTab = "ASSOCIATE" | "INTERN" | "CLIENT";
 
 export function LoginScreen() {
   const router = useRouter();
@@ -25,7 +25,7 @@ export function LoginScreen() {
   const [error, setError] = React.useState<string | null>(null);
 
   const associates = users.filter((u) => u.role === "ASSOCIATE");
-  const interns = users.filter((u) => u.role === "TEAM MEMBERS");
+  const interns = users.filter((u) => u.role === "INTERN");
 
   function handleStaffLogin(userId: string) {
     const user = users.find((u) => u.id === userId);
